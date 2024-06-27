@@ -1,0 +1,29 @@
+
+{
+  "manifest_version": 3,
+  "name": "Etsy Shop Message",
+  "version": "1.0",
+  "description": "Crawl Etsy shops to extract message",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.etsy.com/messages?ref=seller-platform-mcnav*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
